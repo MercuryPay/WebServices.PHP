@@ -37,10 +37,49 @@ class Mercury_Web_Services_SOAP_Helper
 		return $flatArray;
 	}
 	
-	public function gift_transaction(array $requestData, $password)
+	public function credit_transaction(array $requestData, $password)
 	{
 		$tStream = new SimpleXMLElement('<TStream/>');
-		$tStream->addChild('Transaction');
+		$secondElement = "Transaction";
+		
+		if (isset($requestData["TranCode"]))
+		{
+			switch (strtolower($requestData["TranCode"]))
+			{
+				case "batchsummary":
+				case "itemdetail":
+				case "batchclear":
+				case "batchclose":
+				case "serverversion":
+				case "keychange":
+					$secondElement = "Admin";
+					break;
+			}
+		}
+		
+		$tStream->addChild($secondElement);
+	
+		$xmlRequest = $this->array_to_xml($requestData, $tStream);
+			
+		$clientRequest = array(
+				"tran"	=>	$xmlRequest,
+				"pw"	=>	$password,
+		);
+	
+		$xmlResponse = $this->wsClient->CreditTransaction($clientRequest)->CreditTransactionResult;
+		$complexArray = json_decode(json_encode((array) simplexml_load_string($xmlResponse)),1);
+		$flatArray = array();
+		$flatArray = $this->array_flat($complexArray, $flatArray);
+		return $flatArray;
+	}
+	
+	public function gift_transaction(array $requestData, $password)
+	{
+		// IpPort required for Gift Transactions
+		$requestData["IpPort"] = "9100";
+		
+		$tStream = new SimpleXMLElement('<TStream/>');
+		$tStream->addChild("Transaction");
 		
  		$xmlRequest = $this->array_to_xml($requestData, $tStream);
  		
