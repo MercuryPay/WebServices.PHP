@@ -1,7 +1,7 @@
-EasyStart.MercuryGift.WS.PHP
+WebServices.PHP
 ============================
 
-Simple PHP web app to demo processing transactions with our web services platform.
+Simple PHP web app to demo processing transactions with Mercury's web services platform.
 
 3 step process to integrate to MercuryGift Web Services.
 
@@ -13,12 +13,12 @@ Create request arrray and add all the Key/Value pairs.
 $requestData = array
 (
   	"MerchantID" => $_REQUEST["MerchantID"],
-	"IpPort" => "9100",
 	"TranType" => $_REQUEST["TranType"],
 	"TranCode" => $_REQUEST["TranCode"],
 	"InvoiceNo" => $_REQUEST["InvoiceNo"],
 	"RefNo" => $_REQUEST["RefNo"],
 	"AcctNo" => $_REQUEST["AcctNo"],
+	"ExpDate" => $_REQUEST["ExpDate"],
 	"Memo" => $_REQUEST["Memo"],
 	"Purchase" => $_REQUEST["Purchase"]
 );
@@ -31,7 +31,7 @@ Store the response array for further processing.
 ```
 include_once("Mercury_Web_Services_SOAP_Helper.php");
 $soapHelper = new Mercury_Web_Services_SOAP_Helper();
-$responseData = $soapHelper->gift_transaction($requestData, $_REQUEST["Password"]);
+$responseData = $soapHelper->credit_transaction($requestData, $_REQUEST["Password"]);
 ```
 
 ##STEP 3: Read response array to check for approval
