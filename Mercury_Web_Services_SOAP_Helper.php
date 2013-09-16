@@ -14,7 +14,7 @@ class Mercury_Web_Services_SOAP_Helper
 	{
 		foreach ($arr as $k => $v) 
 		{
-			is_array($v) ? array_to_xml($v, $xml) : $xml->addChild($k, $v);
+			is_array($v) ? array_to_xml($v, $xml) : $xml->children()->addChild($k, $v);
 		}
 	
 		return $xml->asXML();
