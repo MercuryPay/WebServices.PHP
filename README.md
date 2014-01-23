@@ -9,7 +9,7 @@ Simple PHP web app to demo processing transactions with Mercury's web services p
     
 Create request arrray and add all the Key/Value pairs.
   
-```
+```PHP
 $requestData = array
 (
   	"MerchantID" => $_REQUEST["MerchantID"],
@@ -28,7 +28,7 @@ $requestData = array
 
 Store the response array for further processing.
 
-```
+```PHP
 include_once("Mercury_Web_Services_SOAP_Helper.php");
 $soapHelper = new Mercury_Web_Services_SOAP_Helper();
 $responseData = $soapHelper->credit_transaction($requestData, $_REQUEST["Password"]);
@@ -38,7 +38,7 @@ $responseData = $soapHelper->credit_transaction($requestData, $_REQUEST["Passwor
 
 Approved transactions will have a CmdStatus equal to "Approved".
 
-```
+```PHP
 if ($responseData["CmdStatus"] <> ""
   	&& $responseData["CmdStatus"] == "Approved")
 {
