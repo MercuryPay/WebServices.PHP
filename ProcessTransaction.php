@@ -4,6 +4,7 @@
 $requestData = array
 (
 		"MerchantID" => $_REQUEST["MerchantID"],
+		"LaneID" => $_REQUEST["02"],
 		"TranType" => $_REQUEST["TranType"],
 		"TranCode" => $_REQUEST["TranCode"],
 		"InvoiceNo" => $_REQUEST["InvoiceNo"],
