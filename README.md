@@ -3,7 +3,7 @@ WebServices.PHP
 
 Simple PHP web app to demo processing transactions with Mercury's web services platform.
 
-3 step process to integrate to MercuryGift Web Services.
+3 step process to integrate to Mercury Web Services.
 
 ##STEP 1: Build the request array
     
