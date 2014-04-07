@@ -12,9 +12,14 @@ class Mercury_Web_Services_SOAP_Helper
 
 	private function array_to_xml(array $arr, SimpleXMLElement &$xml)
 	{
-		foreach ($arr as $k => $v) 
+		foreach ($arr as $k => $v)
 		{
-			is_array($v) ? array_to_xml($v, $xml) : $xml->children()->addChild($k, $v);
+            		if (is_array($v)) {
+                		$node = $xml->addChild($k, null);
+                		$this->array_to_xml($v, $node);
+            		} else {
+                		$xml->addChild($k, $v);
+            		}
 		}
 	
 		return $xml->asXML();
