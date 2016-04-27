@@ -22,11 +22,10 @@ if ($requestData["TranType"] == "PrePaid")
 {
 	$responseData = $soapHelper->gift_transaction($requestData, $_REQUEST["Password"]);
 }
-else 
+else
 {
 	// Add Token request keys for Credit Transactions
 	$requestData["Frequency"] = "OneTime";
-	$requestData["RecordNo"] = "RecordNumberRequested";
 	$responseData = $soapHelper->credit_transaction($requestData, $_REQUEST["Password"]);
 }
 
