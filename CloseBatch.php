@@ -24,7 +24,7 @@ if ($batchSummaryResponse["CmdStatus"] <> ""
 	echo "<h2>Batch Summary Response Data</h2>";
 	print_r($batchSummaryResponse);
 	echo "</font>";
-	
+
 	// STEP 1.b: On successful Batch Summary use the results to build a Batch Close
 	$batchCloseRequest = array
 	(
@@ -41,15 +41,15 @@ if ($batchSummaryResponse["CmdStatus"] <> ""
 			"DebitPurchaseCount" => $batchSummaryResponse["DebitPurchaseCount"],
 			"DebitPurchaseAmount" => $batchSummaryResponse["DebitPurchaseAmount"],
 			"DebitReturnCount" => $batchSummaryResponse["DebitReturnCount"],
-			"DebitReturnAmount" => $batchSummaryResponse["DebitReturnAmount"]			
+			"DebitReturnAmount" => $batchSummaryResponse["DebitReturnAmount"]
 	);
-	
+
 	// STEP 2.b: Use helper class to process the Web Services transaction
 	$batchCloseResponse = $soapHelper->credit_transaction($batchCloseRequest, $_REQUEST["Password"]);
-	
+
 	echo "<h2>Batch Close Request Data</h2>";
 	print_r($batchCloseRequest);
-	
+
 	// STEP 3.b: Read parsed response to check for Success
 	if ($batchCloseResponse["CmdStatus"] <> ""
 			&& $batchCloseResponse["CmdStatus"] == "Success")
@@ -66,7 +66,7 @@ if ($batchSummaryResponse["CmdStatus"] <> ""
 		print_r($batchCloseResponse);
 		echo "</font>";
 	}
-	
+
 }
 else
 {
