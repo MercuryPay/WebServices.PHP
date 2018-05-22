@@ -1,4 +1,4 @@
-WebServices.PHP
+Web Services Integration - PHP
 ============================
 
 Simple PHP web app to demo processing transactions with Mercury's web services platform.
