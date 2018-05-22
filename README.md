@@ -58,11 +58,11 @@ else
 ```
 
 
-## Test Credit Transaction (Request)
+## (Request)
 ![alt text](https://github.com/MercuryPay/WebServices.PHP/blob/master/assets/testCredit.png "Test Credit Request")
 
 
-## Test Credit Transaction (Response - Approved)
+## (Response - Approved)
 ![alt text](https://github.com/MercuryPay/WebServices.PHP/blob/master/assets/testCredit-response.png "Test Credit Response")
 
 
