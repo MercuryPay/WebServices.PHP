@@ -46,7 +46,7 @@
 									<tr>
 										<td width="50%" colspan="4">
 											<h2>Test Credit Transaction</h2>
-											<h5>Some text goes here</h5>
+											<h5 style="font-weight: normal">Tap/Click the submit button below to see the response from the request.</h5>
 										</td>
 									</tr>
 									<tr>
@@ -136,7 +136,7 @@
 										<tr>
 											<td width="100%" colspan="4">
 												<h2>Test Gift Transaction</h2>
-												<h5>Some text goes here</h5>
+												<h5 style="font-weight: normal">Tap/Click the submit button below to see the response from the request.</h5>
 											</td>
 										</tr>
 										<tr>
@@ -218,7 +218,7 @@
 											<tr>
 												<td width="100%" colspan="4">
 													<h2>Test Batch Close</h2>
-													<h5>Some text goes here</h5>
+													<h5 style="font-weight: normal">Tap/Click the submit button below to see the response from the request.</h5>
 												</td>
 											</tr>
 											<tr>
