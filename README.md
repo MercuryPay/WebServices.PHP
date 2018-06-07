@@ -5,6 +5,9 @@ Simple PHP web app to demo processing transactions with Mercury's web services p
 
 3 step process to integrate to Mercury Web Services.
 
+<a href="https://developer.vantiv.com/?utm_campaign=githubcta&utm_medium=hyperlink&utm_source=github&utm_content=gotquestions">Got questions? Connect with our experts on Vantiv ONE.</a>
+
+
 ## STEP 1: Build the request array
     
 Create request arrray and add all the Key/Value pairs.
